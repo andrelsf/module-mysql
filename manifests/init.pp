@@ -42,7 +42,11 @@
 #
 # Copyright 2017 Your name here, unless otherwise noted.
 #
-class mysql {
-
-
+class mysql(
+  String $install_repo_file	= $mysql::params::install_repo_file,
+  Array[String] $packages_mysql = $mysql::params::packages_mysql,
+) inherits ::mysql::params {
+  class { '::mysql::install': }
+  -> class { '::mysql::config': }
+  ~> class { '::mysql::service': }
 }
