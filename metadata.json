@@ -1,0 +1,15 @@
+{
+  "name": "solutilab-mysql",
+  "version": "0.1.0",
+  "author": "solutilab",
+  "summary": "Managment MySQL Database.",
+  "license": "Apache-2.0",
+  "source": "https://github.com/andrelsf/module-mysql.git",
+  "project_page": "https://github.com/andrelsf/module-mysql",
+  "issues_url": "https://github.com/andrelsf/module-mysql/issues",
+  "dependencies": [
+    {"name":"puppetlabs-stdlib","version_requirement":">= 1.0.0"}
+  ],
+  "data_provider": null
+}
+
