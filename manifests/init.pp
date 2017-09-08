@@ -49,6 +49,13 @@ class mysql(
   String $config_owner  	= $mysql::params::config_owner,
   String $config_group  	= $mysql::params::config_group,
   String $config_mode   	= $mysql::params::config_mode,
+  
+  String $service_name          = $mysql::params::service_name,
+  String $service_ensure        = $mysql::params::service_ensure,
+  Boolean $service_enable       = $mysql::params::service_enable,
+  Boolean $service_hasstatus    = $mysql::params::service_hasstatus,
+  Boolean $service_hasrestart   = $mysql::params::service_hasrestart,
+
 ) inherits ::mysql::params {
   class { '::mysql::install': }
   -> class { '::mysql::config': }

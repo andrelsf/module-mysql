@@ -5,7 +5,7 @@ class mysql::install(
   file { $install_repo_file: 
     ensure	=> directory,
     recurse	=> true,
-    content	=> "puppet:///module/mysql/mysql.repo",
+    content	=> "puppet:///module/mysql/repos/mysql.repo",
     notify	=> Package[$packages_mysql],
   }
 
