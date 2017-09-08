@@ -45,6 +45,10 @@
 class mysql(
   String $install_repo_file	= $mysql::params::install_repo_file,
   Array[String] $packages_mysql = $mysql::params::packages_mysql,
+  String $config_my_dir 	= $mysql::params::config_my_dir,
+  String $config_owner  	= $mysql::params::config_owner,
+  String $config_group  	= $mysql::params::config_group,
+  String $config_mode   	= $mysql::params::config_mode,
 ) inherits ::mysql::params {
   class { '::mysql::install': }
   -> class { '::mysql::config': }
