@@ -56,6 +56,9 @@ class mysql(
   Boolean $service_hasstatus    = $mysql::params::service_hasstatus,
   Boolean $service_hasrestart   = $mysql::params::service_hasrestart,
 
+  String $node_mysql_1		= $mysql::params::node_mysql_1,
+  String $node_mysql_2		= $mysql::params::node_mysql_2,
+  String $mysql_cmdline_left    = $mysql::params::mysql_cmdline_left,
 ) inherits ::mysql::params {
   class { '::mysql::install': }
   -> class { '::mysql::config': }

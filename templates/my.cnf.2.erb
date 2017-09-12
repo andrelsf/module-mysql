@@ -1,0 +1,37 @@
+#
+# Mantido e Gerenciado via PUPPET
+#
+[mysqld]
+symbolic-links=0
+bind-address=0.0.0.0
+
+server-id               = 2
+log_bin                 = /var/lib/mysql/mysql-bin.log
+binlog_format           = row
+relay_log               = /var/lib/mysql/mysql-relay-bin.log
+expire_logs_days        = 10
+max_binlog_size         = 100M
+secure-file-priv        = ""
+
+# Auto-increment de chaves primarias deve ser impar em um servidor e par em outro
+# para evitar conflitos master-master ao escrever ao mesmo tempo
+auto-increment-increment = 2
+auto-increment-offset = 1
+
+datadir=/var/lib/mysql
+socket=/var/lib/mysql/mysql.sock
+
+# Disabling symbolic-links is recommended to prevent assorted security risks
+symbolic-links=0
+
+# Recommended in standard MySQL setup
+#sql_mode=NO_ENGINE_SUBSTITUTION,STRICT_TRANS_TABLES
+#sql-mode=NO_AUTO_CREATE_USER,NO_ENGINE_SUBSTITUTION
+sql_mode=""
+
+max_connections = 350
+
+[mysqld_safe]
+log-error=/var/log/mysqld.log
+pid-file=/var/run/mysqld/mysqld.pid
+
